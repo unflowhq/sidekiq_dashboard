@@ -11,6 +11,8 @@ Sidekiq.configure_client do |config|
 end
 
 require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
 map '/' do
   use Rack::Auth::Basic, "Protected Area" do |username, password|
     # Protect against timing attacks: (https://codahale.com/a-lesson-in-timing-attacks/)
