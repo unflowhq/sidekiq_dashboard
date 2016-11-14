@@ -12,9 +12,7 @@
     "standalone",
     "rack"
   ],
-  "addons": [
-    "heroku-redis"
-  ],
+  "addons": [],
   "env": {
     "USERNAME": {
       "description": "A username to log into Sidekiq Dasboard.",
@@ -23,6 +21,9 @@
     "PASSWORD": {
       "description": "The login password. Please change this.",
       "generator": "secret"
+    },
+    "REDIS_URL": {
+      "required": true
     }
   }
 }
