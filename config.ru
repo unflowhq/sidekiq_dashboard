@@ -2,6 +2,7 @@
 # https://github.com/mperham/sidekiq/wiki/Monitoring#standalone-with-basic-auth
 
 require 'sidekiq'
+require 'sidekiq-cron'
 
 Sidekiq.configure_client do |config|
   config.redis = {
