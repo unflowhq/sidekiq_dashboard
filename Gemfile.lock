@@ -7,25 +7,17 @@ GEM
     rack-protection (1.5.3)
       rack
     redis (3.3.1)
-    redis-namespace (1.5.2)
-      redis (~> 3.0, >= 3.0.4)
-    rufus-scheduler (3.2.2)
     sidekiq (4.2.3)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (~> 3.2, >= 3.2.1)
-    sidekiq-cron (0.4.3)
-      redis-namespace (>= 1.5.2)
-      rufus-scheduler (>= 2.0.24)
-      sidekiq (>= 4.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   sidekiq
-  sidekiq-cron
 
 BUNDLED WITH
-   1.13.5
+   1.14.6
