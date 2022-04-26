@@ -1,33 +1,15 @@
-Sidekiq Dashboard
----
+# Sidekiq Dashboard
 
-Standalone application for the [Sidekiq][2] dashboard
+This is the repository that deploys our Sidekiq dashboard. The credentials for the server are in 1Password under "Unflow Server Sidekiq Web UI" (in the Shared vault).
 
----
+https://unflow-server-sidekiq.herokuapp.com/
 
+### Setup
+1. Create the Heroku App.
+2. Attach the Redis datastore from the target app. This will set the `REDIS_URL` in the app's environment variables (and keep it up to date).
 
-## Deploy on Heroku
-
-[![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/honeypotio/sidekiq_dashboard)
-
-Local development
------------------
-To start it locally, use `bundle exec rackup`
-
-
-License
--------
-
-Copyright © 2016 [Honeypot GmbH][1]. It is free software, and may be
-redistributed under the terms specified in the [LICENSE](/LICENSE) file.
-
-About Honeypot
---------------
-
-[![Honeypot](https://www.honeypot.io/logo.png)][1]
-
-Honeypot is a developer focused job platform.
-The names and logos for Honeypot are trademarks of Honeypot GmbH.
-
-[1]: https://www.honeypot.io?utm_source=github
-[2]: http://sidekiq.org
+```sh
+heroku addons:attach unflow-server::REDIS --app unflow-server-sidekiq
+```
+3. Set the `USERNAME` and `PASSWORD` environment variables. These are the HTTP basic auth credentials to enter the server. It will not start without them.
+4. Create/update the 1Password entry for the Sidekiq server.
